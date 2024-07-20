@@ -37,8 +37,16 @@ set laststatus=2
 "No muestra el modo actual
 set noshowmode
 
+"Deshabilitar swap
+set nobackup
+set nowritebackup
+set noswapfile
+
 "Configura la tecla lider
 let mapleader=" "
+
+"Abre archivos hacia la derecha
+set splitright
 
 "Atajos
 
@@ -61,55 +69,21 @@ nmap <Leader>p :PlugInstall<CR>
 nmap <Leader>c :PlugClean<CR>
 
 "Crear directorios
-nmap <Leader>mk :!mkdir
+nmap <Leader>mk :!mkdir<Space>
 
-"GITHUB
-"Clonar
-nmap <Leader>gcl :!git clone
+"split vertical
+nmap <Leader>sv :vsplit<Space>
 
-"Diferenciar
-nmap <Leader>gf :!git diff<CR>
+"Pestaña anterior
+nmap <Leader>tp :tabprev<CR>
 
-"Log
-nmap <Leader>gl :!git log<CR>
+"Pestaña siguiente
+nmap <Leader>tn :tabnext<CR>
 
-"Remote
-nmap <Leader>gr :!git remote add origin 
+"split vertical
+nmap <Leader>sv :vs
 
-"Remote status
-nmap <Leader>grs :!git remote -v<CR>
-
-"Fork
-nmap <Leader>gf :!git remote add upstream 
-
-"Actualizar fork
-nmap <Leader>gfu :!git fetch upstream<CR>
-
-"Rama
-nmap <Leader>gb :!git branch 
-
-"Borrar
-nmap <Leader>grm :!git rm 
-
-"Iniciar repositorio
-nmap <Leader>gi :!git init<CR>
-
-"Agregar todo
-nmap <Leader>gal :!git add .<CR>
-
-"Agregar archivo
-nmap <Leader>ga :!git add
-
-"Commit
-nmap <Leader>gc :!git commit -m "
-
-"Status
-nmap <Leader>gs :!git status<CR>
-
-"Push
-nmap <Leader>gp :!git push origin<CR>
 "Pluggins
-
 call plug#begin('~/vimfiles/plugged')
 
 "Arbol de archivos
@@ -120,6 +94,39 @@ Plug 'nathanaelkane/vim-indent-guides'
 
 "Emmet
 Plug 'mattn/emmet-vim'
+
+"Theme PaperColor
+Plug 'NLKNguyen/papercolor-theme'
+
+"vim-devicons
+Plug 'ryanoasis/vim-devicons'
+
+"vim-nerdtree-syntax-highlight
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+"vim-airline
+Plug 'vim-airline/vim-airline'
+
+"vim-airline-themes
+Plug 'vim-airline/vim-airline-themes'
+
+"powerline
+Plug 'powerline/powerline'
+
+"vim-signify
+Plug 'mhinz/vim-signify'
+
+"fugitive
+Plug 'tpope/vim-fugitive'
+
+"vim-rhubarb
+Plug 'tpope/vim-rhubarb'
+
+"gv.vim
+Plug 'junegunn/gv.vim'
+
+"rainbow
+Plug 'luochen1990/rainbow'
 
 call plug#end()
 
@@ -145,3 +152,38 @@ autocmd FileType html,css EmmetInstall
 
 "mapeo de emmet
 nmap <Leader>em <c-y>,
+
+"Config PaperColor
+
+set t_Co=256
+
+"light or dark
+set background=dark
+colorscheme PaperColor
+
+"Config vim-devicons
+set guifont=FiraCode\ Nerd\ Font\ Mono\:h20
+
+"Config vim-nerdtree-highlight
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+
+let g:NERDTreeHighlightFolders = 1 
+let g:NERDTreeHighlightFoldersFullName = 1 
+let g:NERDTreePatternMatchHighlightFullName = 1
+
+"Config vim-airline-themes
+let g:airline_theme='minimalist'
+
+"Config vim-airline
+let g:airline#extensions#tabline#enabled = 1
+
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+let g:airline#extensions#tabline#formatter = 'default'
+
+let g:airline_powerline_fonts=1
+
+"Config signify
+set updatetime=100
