@@ -113,20 +113,38 @@ Plug 'vim-airline/vim-airline-themes'
 "powerline
 Plug 'powerline/powerline'
 
-"vim-signify
+"vim-signify (iconos de git)
 Plug 'mhinz/vim-signify'
 
-"fugitive
+"fugitive (comandos git)
 Plug 'tpope/vim-fugitive'
 
-"vim-rhubarb
+"vim-rhubarb (extensión para fugitive)
 Plug 'tpope/vim-rhubarb'
 
-"gv.vim
+"gv.vim (para mostrar los cambios de git mas detallados)
 Plug 'junegunn/gv.vim'
 
 "rainbow
 Plug 'luochen1990/rainbow'
+
+"vim-javascript
+Plug 'pangloss/vim-javascript'
+
+"vim-jsx
+Plug 'mxw/vim-jsx'
+
+"vim-closetag
+Plug 'alvan/vim-closetag'
+
+"vim-airline-clock
+Plug 'enricobacis/vim-airline-clock'
+
+"matchtag
+Plug 'gregsexton/matchtag'
+
+"loremipsum
+Plug 'vim-scripts/loremipsum'
 
 call plug#end()
 
@@ -142,7 +160,6 @@ nmap <Leader>nt :NERDTreeFind<CR>
 
 "Guias visibles
 let g:indent_guides_enable_on_vim_startup=1
-
 
 "Config emmet-vim
 
@@ -187,3 +204,37 @@ let g:airline_powerline_fonts=1
 
 "Config signify
 set updatetime=100
+
+"Config vim-jsx
+let g:jsx_ext_required = 1
+
+let g:jsx_pragma_required = 1
+
+"Config vim-closetag
+
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
+let g:closetag_filetypes = 'html,xhtml,phtml'
+
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+
+let g:closetag_emptyTags_caseSensitive = 1
+
+let g:closetag_regions = {
+      \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+      \ 'javascript.jsx': 'jsxRegion',
+      \ 'typescriptreact': 'jsxRegion,tsxRegion',
+      \ 'javascriptreact': 'jsxRegion',
+      \}
+
+let g:closetag_shortcut = '>'
+
+let g:closetag_enable_react_fragment = 1
+
+"Config vim-airline-clock
+let g:airline#extensions#clock#format = '%H:%M:%S'
+
+let g:airline#extensions#clock#updatetime = 1000
+
