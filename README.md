@@ -10,3 +10,4 @@ Para poder instalar plugins en Vim se necesita un administrador de paquetes, par
 iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
     ni $HOME/vimfiles/autoload/plug.vim -Force
 ```
+Estoy trabajando en este repositorio
